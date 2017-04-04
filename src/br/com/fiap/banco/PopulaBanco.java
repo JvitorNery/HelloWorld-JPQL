@@ -20,9 +20,10 @@ import br.com.fiap.dao.impl.TransporteDAOImpl;
 import br.com.fiap.entity.Cidade;
 import br.com.fiap.entity.Cliente;
 import br.com.fiap.entity.Endereco;
+import br.com.fiap.entity.Pacote;
 import br.com.fiap.entity.Reserva;
 import br.com.fiap.entity.Transporte;
-import br.com.fiap.entity.pacote;
+import br.com.fiap.entity.Pacote;
 import br.com.fiap.exception.DBException;
 
 public class PopulaBanco {

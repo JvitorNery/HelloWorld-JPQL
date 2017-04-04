@@ -4,9 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.com.fiap.dao.ClienteDAO;
 import br.com.fiap.dao.EntityManagerFactorySingleton;
 import br.com.fiap.dao.PacoteDAO;
+import br.com.fiap.dao.impl.ClienteDAOImpl;
 import br.com.fiap.dao.impl.PacoteDAOImpl;
+import br.com.fiap.entity.Cliente;
 import br.com.fiap.entity.Pacote;
 
 public class ConsoleView {
@@ -26,6 +29,16 @@ public class ConsoleView {
 		for(Pacote pacote : pacotes2){
 			System.out.println(pacote.getDescricao() + "R$ "+pacote.getPreco()+" "+pacote.getQtdDias());
 		}
+		
+		System.out.println("\n\n\n Listar todos so clientes \n\n\n");
+		
+		ClienteDAO daoCli = new ClienteDAOImpl(em);
+		List<Cliente> clientes = daoCli.listar();
+		
+		for(Cliente cli : clientes){
+			System.out.println(cli.getId() + " nome: "+cli.getNome()+" cpf: "+cli.getCpf());
+		}
+		
 		em.close();
 		System.exit(0);
 	}

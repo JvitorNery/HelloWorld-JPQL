@@ -6,7 +6,7 @@ import br.com.fiap.entity.Pacote;
 
 public interface PacoteDAO extends GenericDAO<Pacote,Integer>{
 	
-List<Pacote> listar();
+	List<Pacote> listar();
 	
 	List<Pacote> buscarPorPreco(float minimo, float maximo);
 	
